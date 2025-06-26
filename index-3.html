@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MotoBazaar</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #000033;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    section {
+      padding: 1rem;
+    }
+    h2 {
+      color: #000066;
+      border-bottom: 2px solid #000066;
+      padding-bottom: 0.5rem;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      width: 200px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+    }
+    .lang-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="lang-toggle" onclick="toggleLanguage()">Change Language</button>
+  <header>
+    <h1 data-en="🚗 Welcome to MotoBazaar" data-hi="🚗 मोटोबाजार में आपका स्वागत है">🚗 मोटोबाजार में आपका स्वागत है</h1>
+    <p data-en="Best Auto Parts for Bikes, Cars, Trucks & Buses" data-hi="बाइक, कार, ट्रक और बस के लिए सर्वश्रेष्ठ ऑटो पार्ट्स">बाइक, कार, ट्रक और बस के लिए सर्वश्रेष्ठ ऑटो पार्ट्स</p>
+  </header>
+
+  <section>
+    <h2 data-en="🛵 Bike Parts" data-hi="🛵 बाइक पार्ट्स">🛵 बाइक पार्ट्स</h2>
+    <div class="products">
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Polish" data-hi="पोलिश">पोलिश</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Mirror" data-hi="मिरर">मिरर</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Tyre" data-hi="टायर">टायर</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Seat Cover" data-hi="सीट कवर">सीट कवर</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-en="🚘 Car Parts" data-hi="🚘 कार पार्ट्स">🚘 कार पार्ट्स</h2>
+    <div class="products">
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Shampoo" data-hi="शैम्पू">शैम्पू</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Polish" data-hi="पोलिश">पोलिश</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Spray" data-hi="स्प्रे">स्प्रे</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Seat Cover" data-hi="सीट कवर">सीट कवर</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-en="🚛 Truck Parts" data-hi="🚛 ट्रक पार्ट्स">🚛 ट्रक पार्ट्स</h2>
+    <div class="products">
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Tyre" data-hi="टायर">टायर</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Square Parts" data-hi="स्क्वायर पार्ट्स">स्क्वायर पार्ट्स</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Mirror" data-hi="मिरर">मिरर</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-en="🚌 Bus Parts" data-hi="🚌 बस पार्ट्स">🚌 बस पार्ट्स</h2>
+    <div class="products">
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Tyre" data-hi="टायर">टायर</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Square Parts" data-hi="स्क्वायर पार्ट्स">स्क्वायर पार्ट्स</p></div>
+      <div class="product"><img src="https://via.placeholder.com/150" /><p data-en="Mirror" data-hi="मिरर">मिरर</p></div>
+    </div>
+  </section>
+
+  <script>
+    let currentLang = 'hi';
+    function toggleLanguage() {
+      currentLang = currentLang === 'hi' ? 'en' : 'hi';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+  </script>
+</body>
+</html>
